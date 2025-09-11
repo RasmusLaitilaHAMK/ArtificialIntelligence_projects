@@ -2,7 +2,7 @@ This is a HAMK - project about creating an algorithm with heurestics, that can a
 
 ---
 
-### Muistiinpanot: ###
+### Notes: ###
 
 **Heurestics used**
 
