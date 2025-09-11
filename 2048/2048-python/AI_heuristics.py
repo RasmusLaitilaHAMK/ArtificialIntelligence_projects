@@ -4,6 +4,8 @@ import constants as c
 import logic
 import random
 from multiprocessing.pool import ThreadPool
+import RasmusLaitila_Heurestics as LH
+import IiroKäki_Heurestics as KH
 
 pool = ThreadPool(4)
 transposition_table = {}

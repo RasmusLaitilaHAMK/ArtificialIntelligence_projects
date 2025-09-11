@@ -19,10 +19,14 @@ Those in the Source code:
 Those that were created in the project:
 
 1. If same number is neighbor - Rasmus
-2. Prioritize higher number -  Iiro
+2. Prioritize higher score -  Iiro
 3. Prioritize direction with the highest combined total point value - Rasmus
-4. Similar number tiles around - Rasmus
+4. Similar number tiles around - Iiro
 5. Put top score in corner - Rasmus
 6. Penalize large distance - Rasmus
 7. If no move creates a combination move to a cirection that has a possibility of having a combination next turn -  Iiro
-8. Combinations?
+
+**Combinations**
+1. Amount of tiles left & prioritise highest score with move - Iiro
+    If not many tiles left empty, prioritise combining small numbers to make space
+
