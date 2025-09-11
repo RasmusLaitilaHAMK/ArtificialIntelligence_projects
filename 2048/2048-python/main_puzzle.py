@@ -88,7 +88,7 @@ class GameGrid(Frame):
                  self.update()
 
         elif not self.game_over:            # If the game isn't over
-            key = AI.AI_play(self.matrix, self.max_depth)    # Get the next move from the AI
+            key = AI.AI_play(self.matrix, self.max_depth)    # Get the next move from the AI --- Important stuff for project starts from here
 
             self.matrix, done, points = self.commands[key](self.matrix) # Execute the move and get the result
             self.points += points   # Add points from the move
