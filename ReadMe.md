@@ -1,1 +1,9 @@
 This is a HAMK - project about creating an algorithm with heurestics, that can achieve as high as possible reward in a 2048 game.
+
+---
+
+### Muistiinpanot: ###
+
+**Heurestics used**
+
+1. 
