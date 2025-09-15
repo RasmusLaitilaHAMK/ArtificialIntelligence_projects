@@ -134,7 +134,7 @@ def evaluate_board(board):
 
     # Add our heuristics here
     score += LH.heuristic_HighestValueDirection(board) * 1.0
-    score += LH.heuristic_PenalizeDistance(board) * 0.1  # weighted penalty
+    # score += LH.heuristic_PenalizeDistance(board) * 0.6  had a negative effect on the score
 
     return score
 

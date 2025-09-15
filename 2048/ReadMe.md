@@ -19,7 +19,7 @@ Those in the Source code:
 Those that were created in the project:
 
 1. If same number is neighbor - Rasmus
-2. Prioritize higher score -  Iiro
+2. Prioritize merging higher score tiles -  Iiro
 3. Prioritize direction with the highest combined total point value - Rasmus
 4. Similar number tiles around - Iiro
 5. Put top score in corner - Rasmus
