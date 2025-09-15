@@ -74,7 +74,7 @@ def score_toplevel_move(key, board, max_depth):
 
 def calculate_chance(board, curr_depth, max_depth):
     if curr_depth >= max_depth:
-        return n_empty_tiles(board)  #Modify the selected heuristic
+        return evaluate_board(board)
   
     possible_boards_2 = []
     possible_boards_4 = []
@@ -89,17 +89,26 @@ def calculate_chance(board, curr_depth, max_depth):
                 new_board = copy.deepcopy(board)
                 new_board[x][y] = 4
                 possible_boards_4.append(new_board)
+                
+                 # If no moves possible
+    if not possible_boards_2 and not possible_boards_4:
+        return n_empty_tiles(board)
 
-    ### Implement HERE
-    ### Implement HERE
-    ### Implement HERE
+    score_sum = 0
+    total_cases = len(possible_boards_2) + len(possible_boards_4)
 
-    return 1 
+    # 90% chance for 2, 10% chance for 4
+    for new_board in possible_boards_2:
+        score_sum += 0.9 * calculate_max(new_board, curr_depth + 1, max_depth)
+    for new_board in possible_boards_4:
+        score_sum += 0.1 * calculate_max(new_board, curr_depth + 1, max_depth)
+
+    return score_sum / total_cases
 
 
 def calculate_max(board, curr_depth, max_depth):
     if curr_depth >= max_depth:
-        return n_empty_tiles(board)  #Modify the selected heuristic
+        return evaluate_board(board)
 
     best_score = 0
         
@@ -112,6 +121,23 @@ def calculate_max(board, curr_depth, max_depth):
             best_score = score
 
     return best_score
+
+
+
+
+def evaluate_board(board):
+    """
+    Combines multiple heuristics into one evaluation score.
+    Higher is better.
+    """
+    score = 0
+
+    # Add our heuristics here
+    score += LH.heuristic_HighestValueDirection(board) * 1.0
+    score += LH.heuristic_PenalizeDistance(board) * 0.1  # weighted penalty
+
+    return score
+
 
 
 ## Heuristics
@@ -143,7 +169,3 @@ def heuristic_empty_tile(matrix):
                 return_key = key
 
     return return_key
-
-### Implement HERE
-### Implement HERE
-### Implement HERE
