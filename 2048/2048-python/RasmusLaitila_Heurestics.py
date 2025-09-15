@@ -15,9 +15,6 @@ commands = {c.KEY_UP: logic.up,
             c.KEY_LEFT: logic.left,
             c.KEY_RIGHT: logic.right}
 
-def EqualNeighbor():
-    # Neighbor stuff here
-    print("Hello")
 
 def heuristic_HighestValueDirection(board):
     # Returns the direction that has the highest combined merge value.

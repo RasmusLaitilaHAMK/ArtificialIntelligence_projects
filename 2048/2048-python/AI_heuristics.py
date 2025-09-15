@@ -134,38 +134,38 @@ def evaluate_board(board):
 
     # Add our heuristics here
     score += LH.heuristic_HighestValueDirection(board) * 1.0
-    score += LH.heuristic_PenalizeDistance(board) * 0.1  # weighted penalty
+    # score += LH.heuristic_PenalizeDistance(board) * 0.6  had a negative effect on the score
 
     return score
 
 
 
-## Heuristics
-def n_empty_tiles(matrix):
-    return sum(sum(np.array(matrix) == 0))
+# ## Heuristics
+# def n_empty_tiles(matrix):
+#     return sum(sum(np.array(matrix) == 0))
 
-# Random Choice
-def heuristic_random():
-    tmp = [c.KEY_UP, c.KEY_DOWN, c.KEY_RIGHT, c.KEY_LEFT]
-    key = tmp[random.randint(0, 3)]
-    return key
+# # Random Choice
+# def heuristic_random():
+#     tmp = [c.KEY_UP, c.KEY_DOWN, c.KEY_RIGHT, c.KEY_LEFT]
+#     key = tmp[random.randint(0, 3)]
+#     return key
 
 
-# A Sample Heuristic
-def heuristic_empty_tile(matrix):
-    best_score = -1
-    return_key = None
+# # A Sample Heuristic
+# def heuristic_empty_tile(matrix):
+#     best_score = -1
+#     return_key = None
 
-    for key in commands.keys():
-        game, done, points = commands[key](matrix)
+#     for key in commands.keys():
+#         game, done, points = commands[key](matrix)
 
-        if not done:
-            pass
+#         if not done:
+#             pass
 
-        if done:
-            n_empty = n_empty_tiles(game)
-            if n_empty > best_score:
-                best_score = n_empty
-                return_key = key
+#         if done:
+#             n_empty = n_empty_tiles(game)
+#             if n_empty > best_score:
+#                 best_score = n_empty
+#                 return_key = key
 
-    return return_key
+#     return return_key
