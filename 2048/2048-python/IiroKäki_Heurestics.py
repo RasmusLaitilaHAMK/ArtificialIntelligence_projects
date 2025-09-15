@@ -15,44 +15,6 @@ commands = {c.KEY_UP: logic.up,
             c.KEY_LEFT: logic.left,
             c.KEY_RIGHT: logic.right}
 
-def EqualNeighbor():
-    # Neighbor stuff here
-    print("Hello")
-
-def heuristic_HighestValueDirection(board):
-    """
-    Korjattu versio: palauttaa sen NÄPPÄIMEN, joka tuottaa suurimman points-arvon yhdellä siirrolla.
-    (Aiemmin palautti vain best_score.)
-    """
-    best_score = -1
-    best_key = None
-    for key in commands.keys():
-        _, done, points = commands[key](board)
-        if done and points > best_score:
-            best_score = points
-            best_key = key
-    return best_key
-
-
-def heuristic_PenalizeDistance(matrix):
-    """
-    Rankaisee tilanteita, joissa isot laatat ovat kaukana valitusta nurkasta (0,0).
-    Suurempi (vähemmän negatiivinen) arvo on parempi.
-    """
-    matrix = np.array(matrix)
-    score = 0
-    corner_x, corner_y = 0, 0  # vasen yläkulma
-
-    for x in range(c.GRID_LEN):
-        for y in range(c.GRID_LEN):
-            value = matrix[x][y]
-            if value > 0:
-                dist = abs(x - corner_x) + abs(y - corner_y)  # Manhattan-etäisyys
-                score -= dist * value
-
-    return score
-
-
 # ---------- UUSI: Merge-priorisointi kun lauta on “täynnä” ----------
 
 def _count_potential_merges_line(line):
