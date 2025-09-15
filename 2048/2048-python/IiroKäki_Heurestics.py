@@ -4,7 +4,7 @@ import constants as c
 import logic
 import random
 from multiprocessing.pool import ThreadPool
-import AI_heuristics as AIH
+import AI_heuristics as AI
 
 
 pool = ThreadPool(4)
@@ -101,8 +101,8 @@ def heuristic_DynamicMergePriority(board, empty_threshold=5, tie_break="points")
             # Tiebreak: pisteet tai PenalizeDistance
             if tie_break == "points":
                 secondary = points
-            else:
-                secondary = heuristic_PenalizeDistance(succ)
+           # else:
+            #    secondary = heuristic_PenalizeDistance(succ)
 
             if (merges > best_primary) or (merges == best_primary and secondary > best_secondary):
                 best_primary = merges
