@@ -77,18 +77,15 @@ def count_potential_merges(board, key):
 
 def heuristic_DynamicMergePriority(board, empty_threshold=5, tie_break="points"):
     """
-    Dynaaminen heuristiikka:
-    - Jos tyhjiä ruutuja <= empty_threshold: valitse siirto, joka tuottaa ENITEN MERGEJÄ.
-      Tasatilanteessa rikotaan tasapeli pisteillä (tai PenalizeDistance:lla).
-    - Muuten: valitse siirto, joka maksisoi PISTEET tältä yhdeltä siirrolta.
-
-    Palauttaa NÄPPÄIMEN.
+    Dynamic heuristic (score version for search tree):
+    - If empties <= threshold: reward merges primarily, tiebreak with points.
+    - Otherwise: reward points primarily, tiebreak with empty spaces.
+    
+    Returns a numeric score (higher is better).
     """
     empties = int(np.sum(np.array(board) == 0))
 
-    best_key = None
-    best_primary = -1
-    best_secondary = -10**9  # tiebreaker
+    best_score = -1e9  # start with very low
 
     for key in commands.keys():
         succ, done, points = commands[key](board)
@@ -96,27 +93,19 @@ def heuristic_DynamicMergePriority(board, empty_threshold=5, tie_break="points")
             continue
 
         if empties <= empty_threshold:
-            # 1) priorisoi mergejen määrä
+            # prioritize merges
             merges = count_potential_merges(board, key)
-            # Tiebreak: pisteet tai PenalizeDistance
             if tie_break == "points":
-                secondary = points
-           # else:
-            #    secondary = heuristic_PenalizeDistance(succ)
-
-            if (merges > best_primary) or (merges == best_primary and secondary > best_secondary):
-                best_primary = merges
-                best_secondary = secondary
-                best_key = key
+                score = merges * 1000 + points
+            else:
+                score = merges * 1000 + AI.heuristic_PenalizeDistance(succ)
 
         else:
-            # 2) priorisoi points
-            primary = points
-            # Tiebreak: enemmän tyhjiä tai parempi etäisyysheuristiikka
-            secondary = int(np.sum(np.array(succ) == 0))
-            if (primary > best_primary) or (primary == best_primary and secondary > best_secondary):
-                best_primary = primary
-                best_secondary = secondary
-                best_key = key
+            # prioritize points
+            n_empty = int(np.sum(np.array(succ) == 0))
+            score = points * 1000 + n_empty
 
-    return best_key
+        if score > best_score:
+            best_score = score
+
+    return best_score

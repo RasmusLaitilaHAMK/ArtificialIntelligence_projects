@@ -133,8 +133,9 @@ def evaluate_board(board):
     score = 0
 
     # Add our heuristics here
-    score += LH.heuristic_HighestValueDirection(board) * 1.0
-    # score += LH.heuristic_PenalizeDistance(board) * 0.6  had a negative effect on the score
+    # score += LH.heuristic_HighestValueDirection(board) * 1.0
+    score += LH.heuristic_PenalizeDistance(board) * 0.6  # had a negative effect on the score
+    score += KH.heuristic_DynamicMergePriority(board, empty_threshold=5, tie_break="points") * 0.3 # Negative effect on the score
 
     return score
 
