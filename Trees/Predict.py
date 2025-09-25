@@ -7,7 +7,7 @@ from pathlib import Path
 # -------------------------------
 # CONFIG
 # -------------------------------
-MODEL_PATH = Path("resnet50/resnet50_finetuned.pth")
+MODEL_PATH = Path("resnet50/resnet50_finetunedV3.pth")
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 NUM_CLASSES = 5  # Replace with your number of species
 IDX_TO_CLASS = {0: 'koivu', 1: 'kuusi', 2: 'lehmus', 3: 'pihlaja', 4: 'vaahtera'}  # Replace with your classes
