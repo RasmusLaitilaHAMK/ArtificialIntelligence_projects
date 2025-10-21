@@ -1,0 +1,37 @@
+{
+  "os":  "macOS-26.0.1-arm64-arm-64bit",
+  "python":  "CPython 3.12.3",
+  "startedAt":  "2025-10-21T08:03:49.549168Z",
+  "program":  "/Users/iirokaki/Opiskelu Syksy 2025/artificial_int_2025/GitHub/ArtificialIntelligence_projects/Trees/ModelCreationV2.ipynb",
+  "codePath":  "Trees/ModelCreationV2.ipynb",
+  "codePathLocal":  "ModelCreationV2.ipynb",
+  "git":  {
+    "remote":  "https://github.com/RasmusLaitilaHAMK/ArtificialIntelligence_projects.git",
+    "commit":  "35895727c83616b9eb5609ca3d42a422ecc760c0"
+  },
+  "email":  "iiro23001@student.hamk.fi",
+  "root":  "/Users/iirokaki/Opiskelu Syksy 2025/artificial_int_2025/GitHub/ArtificialIntelligence_projects/Trees",
+  "host":  "Iiro-MacBook-Air.local",
+  "executable":  "/opt/anaconda3/envs/SolutionsInPR/bin/python",
+  "cpu_count":  8,
+  "cpu_count_logical":  8,
+  "disk":  {
+    "/":  {
+      "total":  "245107195904",
+      "used":  "186242064384"
+    }
+  },
+  "memory":  {
+    "total":  "8589934592"
+  },
+  "apple":  {
+    "name":  "Apple M2",
+    "ecpuCores":  4,
+    "pcpuCores":  4,
+    "gpuCores":  8,
+    "memoryGb":  8,
+    "swapTotalBytes":  "3221225472",
+    "ramTotalBytes":  "8589934592"
+  },
+  "writerId":  "ggx1ts5pfoyi8gw54kw6eakb24mz855a"
+}

@@ -1,0 +1,22 @@
+2025-10-21 11:03:49,551 INFO    MainThread:89106 [wandb_init.py:setup_run_log_directory():686] Logging user logs to /Users/iirokaki/Opiskelu Syksy 2025/artificial_int_2025/GitHub/ArtificialIntelligence_projects/Trees/wandb/run-20251021_110349-es29qvol/logs/debug.log
+2025-10-21 11:03:49,552 INFO    MainThread:89106 [wandb_init.py:setup_run_log_directory():687] Logging internal logs to /Users/iirokaki/Opiskelu Syksy 2025/artificial_int_2025/GitHub/ArtificialIntelligence_projects/Trees/wandb/run-20251021_110349-es29qvol/logs/debug-internal.log
+2025-10-21 11:03:49,552 INFO    MainThread:89106 [wandb_init.py:init():813] calling init triggers
+2025-10-21 11:03:49,552 INFO    MainThread:89106 [wandb_init.py:init():818] wandb.init called with sweep_config: {}
+config: {'epochs': 15, 'batch_size': 16, 'learning_rate': 0.001, 'architecture': 'ResNet18', 'dataset': 'RPS', 'image_size': 224, '_wandb': {}}
+2025-10-21 11:03:50,126 INFO    MainThread:89106 [wandb_init.py:init():861] starting backend
+2025-10-21 11:03:50,126 INFO    MainThread:89106 [wandb_init.py:init():864] sending inform_init request
+2025-10-21 11:03:50,128 INFO    MainThread:89106 [wandb_init.py:init():872] backend started and connected
+2025-10-21 11:03:50,141 INFO    MainThread:89106 [wandb_run.py:_label_probe_notebook():1330] probe notebook
+2025-10-21 11:03:50,142 INFO    MainThread:89106 [wandb_init.py:init():942] updated telemetry
+2025-10-21 11:03:50,167 INFO    MainThread:89106 [wandb_init.py:init():966] communicating run to backend with 90.0 second timeout
+2025-10-21 11:03:50,804 INFO    MainThread:89106 [wandb_init.py:init():1017] starting run threads in backend
+2025-10-21 11:03:50,908 INFO    MainThread:89106 [wandb_run.py:_console_start():2506] atexit reg
+2025-10-21 11:03:50,908 INFO    MainThread:89106 [wandb_run.py:_redirect():2354] redirect: wrap_raw
+2025-10-21 11:03:50,908 INFO    MainThread:89106 [wandb_run.py:_redirect():2423] Wrapping output streams.
+2025-10-21 11:03:50,908 INFO    MainThread:89106 [wandb_run.py:_redirect():2446] Redirects installed.
+2025-10-21 11:03:50,909 INFO    MainThread:89106 [wandb_init.py:init():1057] run started, returning control to user process
+2025-10-21 11:14:59,274 INFO    MainThread:89106 [wandb_run.py:_finish():2272] finishing run iiro23001-hamk/ResNet18_Project/es29qvol
+2025-10-21 11:14:59,275 INFO    MainThread:89106 [wandb_run.py:_atexit_cleanup():2471] got exitcode: 0
+2025-10-21 11:14:59,275 INFO    MainThread:89106 [wandb_run.py:_restore():2453] restore
+2025-10-21 11:14:59,275 INFO    MainThread:89106 [wandb_run.py:_restore():2459] restore done
+2025-10-21 11:15:00,284 INFO    MainThread:89106 [wandb_run.py:_footer_sync_info():3867] logging synced files
